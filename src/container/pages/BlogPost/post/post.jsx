@@ -6,8 +6,23 @@ function Post(props) {
         <img src="http://placeimg.com/200/150/tech" alt="dummy" />
       </div>
       <div className="content">
-        <p className="title">{props.title}</p>
+        <p
+          className="title"
+          onClick={() => {
+            props.goDetail(props.data.id);
+          }}
+        >
+          {props.title}
+        </p>
         <p className="desc">{props.desc}</p>
+        <button
+          className="remove"
+          onClick={() => {
+            props.remove(props.id);
+          }}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
